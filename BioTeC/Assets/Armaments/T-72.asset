@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44e287a14fb5184e89ac3998b73c931, type: 3}
+  m_Name: T-72
+  m_EditorClassIdentifier: 
+  damage: 45
+  currentAmmo: 3
+  maxAmmo: 3
+  armamentName: T-72
+  speed: 1
+  invisible: 0
+  estatico: 0
+  Heat: 0
+  form: 0700000008000000090000000d000000
+  effect: 
+  effectPosition: 
+  NonSelectableBlocks: 

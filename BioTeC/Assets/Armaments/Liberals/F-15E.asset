@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44e287a14fb5184e89ac3998b73c931, type: 3}
+  m_Name: F-15E
+  m_EditorClassIdentifier: 
+  damage: 20
+  currentAmmo: 10
+  maxAmmo: 10
+  armamentName: F-15E
+  speed: 1
+  invisible: 0
+  estatico: 0
+  Heat: 2
+  positionExtraDamage: 0200000003000000
+  extraDamage: 20
+  form: 020000000d000000
+  effect: corrosive
+  effectPosition: 01000000
+  NonSelectableBlocks: 1500000016000000170000001800000019000000
