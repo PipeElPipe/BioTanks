@@ -14,20 +14,12 @@ public class BioTechSO : ScriptableObject
     public int currentHeat;
     public int armor;
     public string bioName;
+
+    public int size;
     //string faction;
     public int[] position; //where the robot spawns
     public int[] currentPosition; //used for position updating
 
     //int[] Armament0_1; //?
     //int[] Armament0_2; //?
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-
-    }
 }

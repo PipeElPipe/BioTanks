@@ -12654,6 +12654,7 @@ GameObject:
   - component: {fileID: 1428422049}
   - component: {fileID: 1428422050}
   - component: {fileID: 1428422051}
+  - component: {fileID: 1428422052}
   m_Layer: 5
   m_Name: leftTurnCanvas
   m_TagString: Untagged
@@ -12727,6 +12728,25 @@ MonoBehaviour:
   aim: {fileID: 869161642}
   locked: {fileID: 1174535808}
   descriptionText: {fileID: 1320700258}
+--- !u!114 &1428422052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428422048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0625e3c8531dd47ab2c7a2d1be51c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bioNameDes: {fileID: 1230804352}
+  bioHeatDes: {fileID: 1105238293}
+  bioMoveDes: {fileID: 672711329}
+  bioSizeDes: {fileID: 817816679}
+  bioHPDes: {fileID: 281643763}
+  bioArmorDes: {fileID: 532710083}
+  bioTech: {fileID: 11400000, guid: 8e0d008cccb1d5c48b801de913d52ef8, type: 2}
 --- !u!1 &1462993954
 GameObject:
   m_ObjectHideFlags: 0
@@ -15495,7 +15515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1739300462
 Transform:
   m_ObjectHideFlags: 0
