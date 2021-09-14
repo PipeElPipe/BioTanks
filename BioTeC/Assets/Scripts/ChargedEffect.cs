@@ -10,8 +10,8 @@ public class ChargedEffect : MonoBehaviour, IEffects, IReturn
     [SerializeField] BioTechSO enemyBioTech = null;
     [SerializeField] int duration = 3;
 
-    int[] effectDuration = new int[25];
-    bool[] hidden = new bool[25];
+    public int[] effectDuration = new int[25];
+    public bool[] hidden = new bool[25];
 
     bool erupted = false;
 
@@ -20,10 +20,12 @@ public class ChargedEffect : MonoBehaviour, IEffects, IReturn
     void OnEnable()
     {
         TurnSystem.EndTurnAction += CountDown;
-        TurnSystem.EndDefenseAction += MarkOff;
+        TurnSystem.EndDefenseAction += MarkOff;        
 
         //for heavy
-        TurnSystem.EndAttackAction += MarkOff;
+        TurnSystem.EndTurnAction += MarkOff;
+
+        TurnSystem.EndDefenseAction += Reveal;
 
         TurnSystem.RevealAction += Reveal;
 
@@ -36,7 +38,9 @@ public class ChargedEffect : MonoBehaviour, IEffects, IReturn
         TurnSystem.EndDefenseAction -= MarkOff;
 
         //for heavy
-        TurnSystem.EndAttackAction -= MarkOff;
+        TurnSystem.EndTurnAction -= MarkOff;
+
+        TurnSystem.EndDefenseAction -= Reveal;
 
         TurnSystem.RevealAction -= Reveal;
     }
@@ -87,6 +91,7 @@ public class ChargedEffect : MonoBehaviour, IEffects, IReturn
 
                 if (effectDuration[form[p] - 1] == 0 || effectDuration[form[p] - 1] == duration + 3)
                 {
+                    Debug.Log("oe");
                     effectDuration[form[p] - 1] = duration + 1;
                     hidden[form[p] - 1] = true;
                 }
@@ -193,10 +198,11 @@ public class ChargedEffect : MonoBehaviour, IEffects, IReturn
 
     void Reveal()
     {
-        for (int i = 0; i < UItable.UItable.Length; i++)
+        for (int i = 0; i < 24; i++)
         {
             if (hidden[i] == true && effectDuration[i] == duration + 1)
             {
+                Debug.Log("ey");
                 table.table[i].GetComponent<Outline>().OutlineWidth = 10f;
                 table.table[i].GetComponent<Renderer>().material.color = Color.blue;
                 hidden[i] = false;

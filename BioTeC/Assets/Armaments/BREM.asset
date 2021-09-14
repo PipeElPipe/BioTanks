@@ -21,7 +21,7 @@ MonoBehaviour:
   speed: 1
   invisible: 1
   estatico: 1
-  Heat: 0
+  Heat: 3
   form: 07000000090000000d0000001100000013000000
   effect: corrosive
   effectPosition: 0100000002000000030000000400000005000000

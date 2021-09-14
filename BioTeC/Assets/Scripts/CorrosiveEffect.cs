@@ -16,7 +16,7 @@ public class CorrosiveEffect : MonoBehaviour, IEffects, IReturn
     [SerializeField] int rootDuration = 2;
 
     public int[] effectDuration = new int[25];
-    bool[] hidden = new bool[25];
+    public bool[] hidden = new bool[25];
 
     bool traped = false;
     int rooted = 0;
@@ -37,6 +37,7 @@ public class CorrosiveEffect : MonoBehaviour, IEffects, IReturn
         TurnSystem.EndTurnAction += TrapedCheck;
         TurnSystem.EndAttackAction += TrapedCheck;
 
+        TurnSystem.EndDefenseAction += Reveal;
         TurnSystem.RevealAction += Reveal;
 
     }
@@ -51,6 +52,7 @@ public class CorrosiveEffect : MonoBehaviour, IEffects, IReturn
         TurnSystem.EndTurnAction -= TrapedCheck;
         TurnSystem.EndAttackAction -= TrapedCheck;
 
+        TurnSystem.EndDefenseAction += Reveal;
         TurnSystem.RevealAction -= Reveal;
     }
 
@@ -125,9 +127,7 @@ public class CorrosiveEffect : MonoBehaviour, IEffects, IReturn
               {
                     for (int j = 0; j < form.Length; j++)
                     {
-                        //table.table[form[j] - 1].GetComponent<Renderer>().material.color = Color.black;
                         table.table[form[j] - 1].GetComponent<Outline>().OutlineWidth = 10f;
-                        //UItable.UItable[form[j] - 1].GetComponent<Renderer>().material.color = Color.black;
                         UItable.UItable[form[j] - 1].GetComponent<Outline>().OutlineWidth = 10f;
                     }
                     for (int i = 0; i < effectPosition.Length; i++)
@@ -219,9 +219,9 @@ public class CorrosiveEffect : MonoBehaviour, IEffects, IReturn
 
     void Reveal()
     {
-        for(int i = 0; i < UItable.UItable.Length; i++)
+        for (int i = 0; i < effectDuration.Length; i++)
         {
-            if (effectDuration[i] == duration - 1 && hidden[i] == true)
+            if (effectDuration[i] == duration && hidden[i] == true)
             {
                 table.table[i].GetComponent<Outline>().OutlineWidth = 10f;
                 table.table[i].GetComponent<Renderer>().material.color = Color.green;
@@ -294,10 +294,6 @@ public class CorrosiveEffect : MonoBehaviour, IEffects, IReturn
         if (invisible == true)
         {
             StartCoroutine(Wait());
-        }
-        else
-        {
-            //MarkOff();
         }
     }
 

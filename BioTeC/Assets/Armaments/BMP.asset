@@ -15,14 +15,14 @@ MonoBehaviour:
   damage: 43
   extraDamage: 0
   positionExtraDamage: 
-  currentAmmo: 2
+  currentAmmo: 3
   maxAmmo: 3
   armamentName: BMP
   speed: 2
-  invisible: 0
+  invisible: 1
   estatico: 0
   Heat: 2
-  form: 08000000090000000d0000000e000000
+  form: 0400000005000000090000000a000000
   effect: 
-  effectPosition: 01000000
+  effectPosition: 0200000004000000
   NonSelectableBlocks: 

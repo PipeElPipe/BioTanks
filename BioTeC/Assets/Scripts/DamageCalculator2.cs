@@ -32,14 +32,6 @@ public class DamageCalculator2 : MonoBehaviour
         TurnSystem.EndPhaseAction -= Count;
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            Debug.Log(" " + order.Count + " " + DamageOrder.Count + " " + coordinate);
-        }
-    }
-
     void Keep(int armamentDamage, int[] positions, string speed)
     {
         for (int i = 0; i < positions.Length; i++)
@@ -181,7 +173,7 @@ public class DamageCalculator2 : MonoBehaviour
                 {
                     if (position == enemyBioTech.currentPosition[j])
                     {
-                        Debug.Log("hit" + enemyBioTech.currentPosition[j]);
+                        //Debug.Log("hit" + enemyBioTech.currentPosition[j]);
                         foreach (int damage in DamageOrder.ToArray())
                         {
                             enemyBioTech.currentHP = enemyBioTech.currentHP - (damage - enemyBioTech.armor);

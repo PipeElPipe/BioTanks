@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-public class BioDescriptionUI : MonoBehaviour
+public class EnemyBioDescriptionUI : MonoBehaviour
 {
     [SerializeField] Text bioNameDes = null;
     [SerializeField] Text bioHeatDes = null;
@@ -37,7 +36,7 @@ public class BioDescriptionUI : MonoBehaviour
         HPslider.value = bioTech.currentHP;
 
         bioNameDes.text = "" + bioTech.name.ToString();
-        bioSizeDes.text = "" + bioTech.size.ToString();
-        bioArmorDes.text = "" + bioTech.armor.ToString();
+        bioSizeDes.text = "Size: " + bioTech.size.ToString();
+        bioArmorDes.text = "Armor: " + bioTech.armor.ToString();
     }
 }

@@ -12,8 +12,6 @@ public class TurnSystem : MonoBehaviour
     [SerializeField] ArmamentClass rightArmament = null;
     [SerializeField] ArmamentClass leftArmament = null;
 
-    //[SerializeField] DamageCalculator damage = null;
-
     [SerializeField] LeftTurnAction leftAction = null;
     [SerializeField] RightTurnAction rightAction = null;
 
@@ -23,7 +21,7 @@ public class TurnSystem : MonoBehaviour
     [SerializeField] GameObject leftUITable = null;
     [SerializeField] GameObject rightUITable = null;
 
-    [SerializeField] GameObject armGroup = null;
+    //[SerializeField] GameObject armGroup = null;
     [SerializeField] CameraManager cameras = null;
 
 
@@ -102,7 +100,7 @@ public class TurnSystem : MonoBehaviour
     {
         StartCoroutine(StartTurn());
         phase = "Attack";
-        armGroup.SetActive(true);
+        //armGroup.SetActive(true);
 
         if (actualTurn % 2 != 0)
         {
@@ -168,7 +166,7 @@ public class TurnSystem : MonoBehaviour
         }
         //heavy armaments from the turn before fall now
         //wait 0.5s
-        armGroup.SetActive(false);
+        //armGroup.SetActive(false);
         cameras.ChangeCam();
 
         phase = "Defend";
@@ -178,6 +176,8 @@ public class TurnSystem : MonoBehaviour
             //left armaments have been used
             leftAction.BioOn(false);
             leftTable.TurnOffOn(false);
+
+            combat.ChangeCanvas("right");
 
             rightAction.BioOn(true);
             rightTable.TurnOffOn(false);
@@ -191,6 +191,8 @@ public class TurnSystem : MonoBehaviour
             //right armaments have been used
             rightAction.BioOn(false);
             rightTable.TurnOffOn(false);
+
+            combat.ChangeCanvas("left");
 
             leftAction.BioOn(true);
             leftTable.TurnOffOn(false);
@@ -218,12 +220,16 @@ public class TurnSystem : MonoBehaviour
             //left can move
             leftAction.BioOn(true);
 
+            combat.ChangeCanvas("left");
+
             rightAction.BioOn(false);
         }
         else
         {
             //right can move
             rightAction.BioOn(true);
+
+            combat.ChangeCanvas("right");
 
             leftAction.BioOn(false);
         }
@@ -245,30 +251,12 @@ public class TurnSystem : MonoBehaviour
         StartCoroutine(Provision());
     }
 
-    void RealEnd()
-    {
-
-    }
-
     public void EndPhase()
     {
         switch (phase)
         {
             case "Attack":
                 Attack();
-                /*
-                if (actualTurn > 1)
-                {
-                    StartCoroutine(WaitHeavy());
-                }
-                else
-                {
-                    if (EndAttackAction != null)
-                    {
-                        EndAttackAction();
-                    }
-                    Defend();
-                }*/
                 if (EndAttackAction != null)
                 {
                     EndAttackAction();
@@ -283,7 +271,6 @@ public class TurnSystem : MonoBehaviour
                 }
                 else
                 {
-                    //Fall();
                     PostCombat();
                 }
                 break;
@@ -294,18 +281,6 @@ public class TurnSystem : MonoBehaviour
         }
     }
 
-    /*IEnumerator WaitHeavy()
-    {
-        if (EndAttackAction != null)
-        {
-            EndAttackAction();
-        }
-
-        yield return new WaitForSeconds(0.5f);
-        //HeavyFall();
-        Defend();
-    }*/
-
     IEnumerator Wait()
     {
         if (RevealAction != null)
@@ -314,33 +289,7 @@ public class TurnSystem : MonoBehaviour
         }
         yield return new WaitForSeconds(0.8f);
         invisibleShot = false;
-        //Fall();
         PostCombat();
     }
-
-    /*
-    void Fall()
-    {
-        if (actualTurn % 2 != 0)
-        {
-            damage.DamageResult( rightBioTech.armor, "left");
-        }
-        else
-        {
-            damage.DamageResult(/*leftArmament.armament.damage,leftBioTech.armor, "right");
-        }
-    }
-    
-    void HeavyFall()
-    {
-        if (actualTurn % 2 != 0)
-        {
-            damage.DamageResult(/*leftArmament.armament.damage, leftBioTech.armor, "right");
-        }
-        else
-        {
-            damage.DamageResult(/*rightArmament.armament.damage, rightBioTech.armor, "left");
-        }
-    }*/
 
 }

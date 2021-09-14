@@ -12,17 +12,6 @@ public class CombatHUD : MonoBehaviour
     [SerializeField] Text mode = null;
 
     [SerializeField] TurnSystem turn = null;
-
-
-
-    public void SetHUD()
-    {
-        /*
-        nameText.text = bioTech.bioName;
-        hpSlider.maxValue = bioTech.maxHP;
-        hpSlider.value = bioTech.currentHP;
-        */
-    }
     
     public void ChangeCanvas(string turn)
     {
@@ -51,10 +40,5 @@ public class CombatHUD : MonoBehaviour
     {
         mode.text = "Weapons: Off";
         turn.EndPhase();
-    }
-
-    public void SetHP(int hp)
-    {
-        //hpSlider.value = hp;
     }
 }

@@ -29,6 +29,8 @@ public class ArmamentClass : MonoBehaviour
     [SerializeField] Effects effects = null;
     [SerializeField] BioTechSO playerBioTech = null;
 
+    [SerializeField] Suspense suspend = null;
+
     public int weaponEnable;
 
     //public Queue order = new Queue();
@@ -144,14 +146,19 @@ public class ArmamentClass : MonoBehaviour
         {
             playerBioTech.currentHeat = playerBioTech.currentHeat - armament.Heat;
 
-            if (armament.effect != "")
+            if (armament.speed.ToString() == "Heavy")
             {
-                effects.Effect(armament.form, armament.effectPosition, armament.invisible, armament.speed.ToString()/*, armament.Heat*/);
+                suspend.Suspend(armament.form, armament.effectPosition, armament.invisible, "Heavy");
+            }
+
+            /*if (armament.effect != "")
+            {
+                effects.Effect(armament.form, armament.effectPosition, armament.invisible, armament.speed.ToString());
             }
             else
             {
-                effects.NullEffect(armament.form,/* armament.Heat,*/ armament.invisible, armament.speed.ToString());
-            }
+                effects.NullEffect(armament.form, armament.invisible, armament.speed.ToString());
+            }*/
 
             for (int i = 0; i < playerBioTech.currentPosition.Length; i++)
             {
@@ -173,7 +180,7 @@ public class ArmamentClass : MonoBehaviour
             }
             if (extraDamage == true)
             {
-                Debug.Log("in");
+                //Debug.Log("in");
                 if (LaunchAction != null)
                 {
                     LaunchAction(armament.damage + armament.extraDamage, armament.form, armament.speed.ToString());
@@ -182,7 +189,7 @@ public class ArmamentClass : MonoBehaviour
             }
             else
             {
-                Debug.Log("out");
+                //Debug.Log("out");
                 if (LaunchAction != null)
                 {
                     LaunchAction(armament.damage, armament.form, armament.speed.ToString());

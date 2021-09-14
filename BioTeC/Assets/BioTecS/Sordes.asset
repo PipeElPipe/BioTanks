@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: Sordes
   m_EditorClassIdentifier: 
   MP: 3
-  currentMP: 0
+  currentMP: 3
   maxHP: 200
   currentHP: 200
   Heat: 12
   currentHeat: 12
-  armor: 0
+  armor: 3
   bioName: Sordes
+  size: 1
   position: 0d000000
-  currentPosition: 16000000
+  currentPosition: 0d000000

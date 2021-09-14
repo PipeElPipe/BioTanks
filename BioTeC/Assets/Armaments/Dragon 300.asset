@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: Dragon 300
   m_EditorClassIdentifier: 
   damage: 80
-  currentAmmo: 0
+  extraDamage: 0
+  positionExtraDamage: 
+  currentAmmo: 3
   maxAmmo: 3
   armamentName: 'Dragon: 300'
-  speed: 1
+  speed: 2
   invisible: 0
   estatico: 0
-  Heat: 0
+  Heat: 3
   form: 0b00000010000000150000001600000017000000
-  effect: 
-  effectPosition: 
+  effect: corrosive
+  effectPosition: 020000000300000004000000
   NonSelectableBlocks: 

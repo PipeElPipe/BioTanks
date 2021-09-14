@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Effects : MonoBehaviour, IReturn
+public class Effects : MonoBehaviour
 {
     [SerializeField] Table table = null;
     [SerializeField] UITable UItable = null;
-    //[SerializeField] BioTechSO playerBioTech = null;
 
     IEffects effectsInterface;
     IHeavy heavyInterface;
@@ -31,9 +30,8 @@ public class Effects : MonoBehaviour, IReturn
         TurnSystem.RevealAction -= Reveal;
     }
 
-    public void NullEffect(int[] form, /*int Heat,*/ bool invisible, string speed)
+    public void NullEffect(int[] form, bool invisible, string speed)
     {
-        //playerBioTech.currentHeat = playerBioTech.currentHeat - Heat;
         if (speed == "Immediate")
         {
             Normal(form, invisible, speed);
@@ -49,10 +47,8 @@ public class Effects : MonoBehaviour, IReturn
         }
     }
 
-    public void Effect(int[] form, int[] effectPosition, bool invisible, string speed /*,int Heat*/)
+    public void Effect(int[] form, int[] effectPosition, bool invisible, string speed)
     {
-        //playerBioTech.currentHeat = playerBioTech.currentHeat - Heat;
-        //heavyInterface.Recieve(form, invisible);
         effectsInterface.Effect(form, effectPosition, invisible, speed);
     }
 
@@ -110,21 +106,7 @@ public class Effects : MonoBehaviour, IReturn
         }
     }
 
-    public void Return(bool[] result, bool invisible)
-    {
-        /*for (int i = 0; i < 25; i++)
-        {
-            if(result[i] == true)
-            {
-                normal[i] = true;
-                table.table[i].GetComponent<Outline>().OutlineWidth = 10f;
-            }
-        }
-        if (invisible == true)
-        {
-            StartCoroutine(Wait()); 
-        }*/
-    }
+
 
     IEnumerator Wait()
     {

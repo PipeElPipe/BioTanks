@@ -17,8 +17,9 @@ MonoBehaviour:
   maxHP: 300
   currentHP: 300
   Heat: 6
-  currentHeat: 3
+  currentHeat: 6
   armor: 10
   bioName: Cocodrill
+  size: 6
   position: 020000000300000007000000080000000c0000000d000000
   currentPosition: 020000000300000007000000080000000c0000000d000000
