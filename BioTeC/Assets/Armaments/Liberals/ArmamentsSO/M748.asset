@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44e287a14fb5184e89ac3998b73c931, type: 3}
+  m_Name: M748
+  m_EditorClassIdentifier: 
+  damage: 30
+  extraDamage: 40
+  positionExtraDamage: 03000000
+  currentAmmo: 0
+  maxAmmo: 3
+  armamentName: M748
+  speed: 2
+  invisible: 1
+  estatico: 0
+  Heat: 1
+  form: 0d000000
+  effect: 
+  effectPosition: 
+  NonSelectableBlocks: 
+  formImage: {fileID: 21300000, guid: 39331ed6c1b6ed04b8bd5af2f6ad2b17, type: 3}

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MP: 3
   currentMP: 3
-  maxHP: 200
-  currentHP: 200
-  Heat: 12
-  currentHeat: 12
+  maxHP: 150
+  currentHP: 0
+  Heat: 8
+  currentHeat: 0
   armor: 3
   bioName: Sordes
   size: 1

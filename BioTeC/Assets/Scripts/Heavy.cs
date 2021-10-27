@@ -58,7 +58,7 @@ public class Heavy : MonoBehaviour, IHeavy
     {
         if (enemyTurn == true)
         {
-            returnInterface.Return(heavy, false);
+            //returnInterface.Return(heavy, false);
         }
     }
 

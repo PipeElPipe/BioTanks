@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44e287a14fb5184e89ac3998b73c931, type: 3}
+  m_Name: Dragon 300
+  m_EditorClassIdentifier: 
+  damage: 50
+  extraDamage: 0
+  positionExtraDamage: 
+  currentAmmo: 0
+  maxAmmo: 2
+  armamentName: 'Dragon: 300'
+  speed: 1
+  invisible: 0
+  estatico: 1
+  Heat: 1
+  form: 090000000d00000011000000
+  effect: charge
+  effectPosition: 010000000200000003000000
+  NonSelectableBlocks: 
+  formImage: {fileID: 21300000, guid: 2ced1414f7f77d443996b6105c1263ff, type: 3}

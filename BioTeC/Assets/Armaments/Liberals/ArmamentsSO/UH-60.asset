@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44e287a14fb5184e89ac3998b73c931, type: 3}
+  m_Name: UH-60
+  m_EditorClassIdentifier: 
+  damage: 65
+  extraDamage: 0
+  positionExtraDamage: 
+  currentAmmo: 0
+  maxAmmo: 1
+  armamentName: UH-60
+  speed: 0
+  invisible: 0
+  estatico: 0
+  Heat: 2
+  form: 030000000d000000
+  effect: 
+  effectPosition: 
+  NonSelectableBlocks: 020000000c00000016000000040000000e00000018000000
+  formImage: {fileID: 21300000, guid: 8a3cb9b1fdc05d04182a98ca629766be, type: 3}

@@ -15,6 +15,7 @@ public class WeaponMode : MonoBehaviour
             {
                 WeaponModeAction();
             }
+            ToolTipSystem.Hide();
         }
     }
 

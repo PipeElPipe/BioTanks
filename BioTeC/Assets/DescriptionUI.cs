@@ -15,17 +15,17 @@ public class DescriptionUI : MonoBehaviour
     [SerializeField] GameObject heavy = null;
     [SerializeField] GameObject reactive = null;
 
-    //[SerializeField] Text visibilityDes = null;
     [SerializeField] GameObject hidden = null;
     [SerializeField] GameObject visible = null;
 
     [SerializeField] Text effectDes = null;
 
-    //[SerializeField] Text staticOrMovableDes = null;
     [SerializeField] GameObject aim = null;
     [SerializeField] GameObject locked = null;
 
     [SerializeField] GameObject descriptionText = null;
+
+    [SerializeField] Image formImage = null;
 
     string speed = null;
 
@@ -45,7 +45,11 @@ public class DescriptionUI : MonoBehaviour
         if (armamentClass.weaponEnable == 1)
         {
             descriptionText.SetActive(true);
-     
+
+            if (armamentClass.armament.formImage != null)
+            {
+                formImage.sprite = armamentClass.armament.formImage; 
+            }
             nameDes.text = armamentClass.armament.name;
             damageDes.text = "Damage: " + armamentClass.armament.damage.ToString();
             heatDes.text = "Heat: " + armamentClass.armament.Heat.ToString();
@@ -87,6 +91,11 @@ public class DescriptionUI : MonoBehaviour
             }
 
             effectDes.text = armamentClass.armament.effect.ToString();
+
+            if(armamentClass.armament.effect.ToString() == "")
+            {
+                effectDes.text = "no effect";
+            }
 
             if (armamentClass.armament.estatico == true)
             {

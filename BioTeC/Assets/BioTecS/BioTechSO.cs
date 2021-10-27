@@ -20,6 +20,8 @@ public class BioTechSO : ScriptableObject
     public int[] position; //where the robot spawns
     public int[] currentPosition; //used for position updating
 
+    public string state = null;
+
     //int[] Armament0_1; //?
     //int[] Armament0_2; //?
 }

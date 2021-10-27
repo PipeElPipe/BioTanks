@@ -26,11 +26,6 @@ public class DamageCalculator : MonoBehaviour
         DamageOrder.Enqueue(armamentDamage);
     }
 
-    void Count(int armor, string LeftOrRight)
-    {
-
-    }
-
     public void DamageResult(int armor, string LeftOrRight)
     {
         if (LeftOrRight == "left")

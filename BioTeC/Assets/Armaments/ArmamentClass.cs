@@ -26,7 +26,6 @@ public class ArmamentClass : MonoBehaviour
     [SerializeField] public ArmamentSO armament = null;
     //[SerializeField] Table table = null;
     [SerializeField] UITable UItable = null;
-    [SerializeField] Effects effects = null;
     [SerializeField] BioTechSO playerBioTech = null;
 
     [SerializeField] Suspense suspend = null;
@@ -151,14 +150,15 @@ public class ArmamentClass : MonoBehaviour
                 suspend.Suspend(armament.form, armament.effectPosition, armament.invisible, "Heavy");
             }
 
-            /*if (armament.effect != "")
+            if (armament.speed.ToString() == "Immediate")
             {
-                effects.Effect(armament.form, armament.effectPosition, armament.invisible, armament.speed.ToString());
+                suspend.Suspend(armament.form, armament.effectPosition, armament.invisible, "Immediate");
             }
-            else
+
+            if (armament.speed.ToString() == "Reactive")
             {
-                effects.NullEffect(armament.form, armament.invisible, armament.speed.ToString());
-            }*/
+                suspend.Suspend(armament.form, armament.effectPosition, armament.invisible, "Reactive");
+            }
 
             for (int i = 0; i < playerBioTech.currentPosition.Length; i++)
             {

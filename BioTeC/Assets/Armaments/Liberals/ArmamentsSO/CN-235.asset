@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f44e287a14fb5184e89ac3998b73c931, type: 3}
+  m_Name: CN-235
+  m_EditorClassIdentifier: 
+  damage: 20
+  extraDamage: 0
+  positionExtraDamage: 
+  currentAmmo: 1
+  maxAmmo: 1
+  armamentName: CN-235
+  speed: 0
+  invisible: 1
+  estatico: 1
+  Heat: 3
+  form: 070000000e00000011000000
+  effect: corrosive
+  effectPosition: 010000000200000003000000
+  NonSelectableBlocks: 
+  formImage: {fileID: 21300000, guid: c561f61e002e8d54fbfc8cc7b5c609c5, type: 3}

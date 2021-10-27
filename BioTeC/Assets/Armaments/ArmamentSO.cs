@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Speed { Reactive, Immediate, Heavy };
 [CreateAssetMenu(fileName = "New Armament", menuName = "Add Armament")]
@@ -26,5 +27,7 @@ public class ArmamentSO : ScriptableObject
     [SerializeField] public string effect;
     [SerializeField] public int[] effectPosition;
     [SerializeField] public int[] NonSelectableBlocks;
+
+    [SerializeField] public Sprite formImage;
 
 }

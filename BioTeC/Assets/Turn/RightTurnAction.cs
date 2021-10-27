@@ -6,10 +6,27 @@ public class RightTurnAction : MonoBehaviour
 {
     private Movement1 movement;
     [SerializeField] DamageCalculator2 dmg2 = null;
+
+    [SerializeField] Suspense suspender = null;
+
+    bool moment = false;
     //private Effects effects;
+
+    void OnEnable()
+    {
+        TurnSystem.EndTurnAction += MomentTrue;
+        TurnSystem.EndPhaseAction += SuspenderOn;
+    }
+
+    void OnDisable()
+    {
+        TurnSystem.EndTurnAction -= MomentTrue;
+        TurnSystem.EndPhaseAction -= SuspenderOn;
+    }
 
     void Start()
     {
+        suspender.enabled = false;
         movement = GetComponent<Movement1>();
         //effects = GetComponent<Effects>();
     }
@@ -39,6 +56,19 @@ public class RightTurnAction : MonoBehaviour
         {
             dmg2.enabled = false;
             //effects.enabled = false;
+        }
+    }
+
+    void MomentTrue()
+    {
+        moment = true;
+    }
+
+    void SuspenderOn()
+    {
+        if (moment == true)
+        {
+            suspender.enabled = true; 
         }
     }
 }

@@ -156,13 +156,14 @@ public class TurnSystem : MonoBehaviour
 
     void Defend()
     {
-        if (EndPhaseAction != null)
-        {
-            EndPhaseAction();
-        }
         if (EndAttackAction != null)
         {
             EndAttackAction();
+        }
+
+        if (EndPhaseAction != null)
+        {
+            EndPhaseAction();
         }
         //heavy armaments from the turn before fall now
         //wait 0.5s
@@ -237,16 +238,17 @@ public class TurnSystem : MonoBehaviour
 
     void End()
     {
+        if (EndTurnAction != null)
+        {
+            EndTurnAction();
+        }
+
         if (EndPhaseAction != null)
         {
             EndPhaseAction();
         }
         phase = "End";
         actualTurn++;
-        if (EndTurnAction != null)
-        {
-            EndTurnAction(); 
-        }
         cameras.ChangeCam();
         StartCoroutine(Provision());
     }

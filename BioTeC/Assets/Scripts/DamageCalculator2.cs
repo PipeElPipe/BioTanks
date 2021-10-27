@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class DamageCalculator2 : MonoBehaviour
 {
-    [SerializeField] BioTechSO enemyBioTech = null;  
+    [SerializeField] BioTechSO enemyBioTech = null;
+
+    public delegate void EnemyDamagedEvent();
+    public static event EnemyDamagedEvent DamagedAction;
 
     private Queue order = new Queue();
     private Queue DamageOrder = new Queue();
@@ -173,6 +176,12 @@ public class DamageCalculator2 : MonoBehaviour
                 {
                     if (position == enemyBioTech.currentPosition[j])
                     {
+
+                        if (DamagedAction != null)
+                        {
+                            DamagedAction();
+                        }
+
                         //Debug.Log("hit" + enemyBioTech.currentPosition[j]);
                         foreach (int damage in DamageOrder.ToArray())
                         {
